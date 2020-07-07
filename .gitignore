@@ -5,7 +5,7 @@
 # Compiled class file
 *.class
 
-Model/Conexion.java
+*Model
 
 # Log file
 *.log
