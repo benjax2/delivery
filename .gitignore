@@ -4,7 +4,7 @@
 ### Java ###
 # Compiled class file
 *.class
-
+conexion*
 
 # Log file
 *.log

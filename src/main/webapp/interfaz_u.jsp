@@ -1,3 +1,10 @@
+<%@page import="Dao.Registro_local"%>
+<%@page import="java.util.List"%>
+<%@page import="Model.Crudlocal"%>
+<%@page import="java.util.ArrayList"%>
+
+<%@page import="Dao.Registro_cliente"%>
+<%@page import="Model.CrudPersona"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,6 +19,14 @@
 
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/main.js"></script>
+	<style>
+		.li_locales:hover{
+			background:#F8AF6E !important;
+		}
+		.li_locales{
+			cursor: pointer;
+		}	
+	</style>
 	
 </head>
 
@@ -37,12 +52,24 @@
 						<li class="title-menu"><span class="fa fa-shopping-bag icon-menu"></span>Tiendas</li>
 						<li class="go-back">Atras</li>
 
-						<li><a href="#">Santa isabel - La Cisterna</a></li>
-						<li><a href="#">Jumbo - San Miguel</a></li>
-						<li><a href="#">Lider - La Cisterna</a></li>
-						<li><a href="#">Totus - La Reina</a></li>
-						<li><a href="#">Sushi - ñuñoa</a></li>
-						<li><a href="#">Ok Market - Santiago Centro</a></li>
+						<%	
+                			Crudlocal crudLocal = new Crudlocal();
+               			 	List<Registro_local> datos = new ArrayList();          
+                			datos = crudLocal.selectAll();   
+               			 %>
+						
+						<%
+                			for(Registro_local local: datos){
+                	
+               			 %>
+                	<div>
+                		<li style="border:0.5px solid black;padding:10px;" class="li_locales"><%= local.getNombre() %> </li>
+        				
+        				<%
+        				}
+        				%>
+        			</div>
+					
 					</ul>
 				</li>
 
@@ -54,7 +81,8 @@
 	</header>
 	
 	<div class="container text-center mt-5 pt-5">
-		<h1>Bienvenidos a todos a nuestro servicio de delivery!</h1>
+
+		<h1>Bienvenido este es tu portal de usuario!</h1>
 		<p class="mt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam quo deserunt reprehenderit nam facilis tempore atque veritatis officia neque nesciunt animi sint suscipit iste, consequatur excepturi saepe harum consequuntur!</p>
 		<img src="./assets/img/favicon.jpg" class="img-fluid" alt="pepsi">
 	</div>
