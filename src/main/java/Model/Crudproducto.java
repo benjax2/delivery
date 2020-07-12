@@ -41,28 +41,31 @@ public class Crudproducto implements Operaciones {
         }
      return respuesta;
     }
-	@Override
-	public List<Producto> selectAll() {
-		List<Producto> datos = new ArrayList<>();
-		Connection connection;
-		PreparedStatement pst;
-		// ResultSet --> Permite recorrer una lista.
-		ResultSet resultSet;
-		String query = "select * from producto";
-		try {
-			Class.forName( conexion.getDriver() );
-	           connection = (Connection) DriverManager.getConnection(conexion.getUrl(), conexion.getUsuario(), conexion.getClave());
-	           pst = (PreparedStatement) connection.prepareStatement(query);
-	           resultSet= pst.executeQuery();
-	           while(resultSet.next()) {
-	               datos.add(new Producto(resultSet.getString("nombre"), resultSet.getInt("id_producto"), resultSet.getInt("precio"),resultSet.getString("stock")));
-	           }	           
-	           
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO: handle exception
-		}
-		return datos;
-	}   
+    @Override
+   	public List<Producto> selectAll() {
+   		List<Producto> datos = new ArrayList<>();
+   		Connection connection;
+   		PreparedStatement pst;
+   		// ResultSet --> Permite recorrer una lista.
+   		ResultSet resultSet;
+   		String query = "select * from producto";
+   		try {
+   			Class.forName( conexion.getDriver() );
+   	           connection = (Connection) DriverManager.getConnection(conexion.getUrl(), conexion.getUsuario(), conexion.getClave());
+   	           pst = (PreparedStatement) connection.prepareStatement(query);
+   	           resultSet= pst.executeQuery();
+   	           while(resultSet.next()) {
+   	        	   
+   	               datos.add(new Producto(resultSet.getString("nombre"),resultSet.getInt("precio"),resultSet.getInt("stock"),resultSet.getString("foto")));
+   	           }
+   	           
+   	           
+   	           
+   		} catch (ClassNotFoundException | SQLException e) {
+   			// TODO: handle exception
+   		}
+   		return datos;
+   	}    
 
     
 }
