@@ -1,6 +1,6 @@
 <%@page import="Dao.Producto"%>
 <%@page import="java.util.List"%>
-<%@page import="Model.Crudlocal"%>
+<%@page import="Model.Crudproducto"%>
 <%@page import="java.util.ArrayList"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -60,9 +60,9 @@
 		<br><hr>
 		<!-- Llamado Sql -->
 		<%	
-           Crudlocal crudLocal = new Crudlocal();
+           Crudproducto crudproducto = new Crudproducto();
            List<Producto> datos = new ArrayList();          
-           datos = crudLocal.selectAll();   
+           datos = crudproducto.selectAll();   
          %>
 						
 
