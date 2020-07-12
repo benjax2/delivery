@@ -13,7 +13,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Interfaz de usuario</title>
+	<title>Interfaz de local</title>
 	<link rel="stylesheet" href="css/interfaz_usuari.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 
@@ -40,39 +40,16 @@
 				<li class="title-menu">Todas las categorias</li>
 				<!-- TITULAR -->
 
-				<li><a href="interfaz_u.jsp"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
+				<li><a href="interfaz_l.jsp"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
 
 				<li class="item" menu="1">
-					<a href="#"><span class="fa fa-suitcase icon-menu"></span>Bandeja de Compras</a>
+					<a href="#"><span class="fa fa-suitcase icon-menu"></span>Pedidos</a>
 				</li>
 
-				<li class="item-submenu" menu="2">
-					<a href="#"><span class="fa fa-shopping-bag icon-menu"></span>Tiendas Disponibles</a>
-					<ul class="submenu">
-						<li class="title-menu"><span class="fa fa-shopping-bag icon-menu"></span>Tiendas</li>
-						<li class="go-back">Atras</li>
-						
-						<%	
-                			Crudlocal crudLocal = new Crudlocal();
-               			 	List<Registro_local> datos = new ArrayList();          
-                		//	datos = crudLocal.selectAll();   
-               			 %>
-						
-						<%
-                			for(Registro_local local: datos){
-                	
-               			 %>
-                	<div>
-                		<li style="border:0.5px solid black;padding:10px;" class="li_locales"><%= local.getNombre() %> </li>
-        				
-        				<%
-        				}
-        				%>
-        			</div>
+				<li class="item" menu="2">
+					<a href="menu_local/productos.jsp"><span class="fa fa-shopping-bag icon-menu"></span>Productos</a></li>
 					
-					</ul>
-				</li>
-
+					
 				<li><a href="#"><span class="fa fa-envelope icon-menu"></span>Contacto</a></li>
 				<li><a href="#"><span class="fa fa-envelope icon-menu"></span>Editar perfil</a></li>
 				<li><a href="./index.html">Cerrar Sesion</a></li>
@@ -82,7 +59,7 @@
 	
 	<div class="container text-center mt-5 pt-5">
 
-		<h1>Bienvenido este es tu portal de usuario!</h1>
+		<h1>Bienvenido este es tu portal de locales!</h1>
 		<p class="mt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam quo deserunt reprehenderit nam facilis tempore atque veritatis officia neque nesciunt animi sint suscipit iste, consequatur excepturi saepe harum consequuntur!</p>
 		<img src="./assets/img/favicon.jpg" class="img-fluid" alt="pepsi">
 	</div>

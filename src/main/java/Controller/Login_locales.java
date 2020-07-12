@@ -50,7 +50,7 @@ public class Login_locales extends HttpServlet {
 			local.setPwd(pwd);
 			r=validar.validarC(local);
 			if(r==1) {
-				request.getRequestDispatcher("interfaz_u.jsp").forward(request, response);
+				request.getRequestDispatcher("interfaz_l.jsp").forward(request, response);
 			}else {
 				
 				request.getRequestDispatcher("index.html").forward(request, response);

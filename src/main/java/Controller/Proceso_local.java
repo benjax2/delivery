@@ -40,7 +40,7 @@ public class Proceso_local extends HttpServlet {
         Crudlocal crudlocal = new Crudlocal();
         
          local.setNombre(request.getParameter("nombre"));
-         local.setRut(request.getParameter("rut"));
+         local.setRut_representante(request.getParameter("rut"));
          local.setEmail(request.getParameter("email"));
          local.setPwd(request.getParameter("pwd"));
          local.setFono( Integer.parseInt(request.getParameter("fono")));

@@ -3,7 +3,7 @@ package Dao;
 public class Registro_local {
 
 	String nombre; 
-	String rut;
+	String rut_representante;
 	String email;
 	String pwd;
 	int fono;
@@ -12,11 +12,11 @@ public class Registro_local {
 	String giro;
 	String patente;
 	
-	public Registro_local(String nombre, String rut, String email, String pwd, int fono, String direccion,
+	public Registro_local(String nombre, String rut_representante, String email, String pwd, int fono, String direccion,
 			String comuna, String giro,String patente) {
 		super();
 		this.nombre = nombre;
-		this.rut = rut;
+		this.rut_representante = rut_representante;
 		this.email = email;
 		this.pwd = pwd;
 		this.fono = fono;
@@ -35,11 +35,11 @@ public class Registro_local {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getRut() {
-		return rut;
+	public String getRut_representante() {
+		return rut_representante;
 	}
-	public void setRut(String rut) {
-		this.rut = rut;
+	public void setRut_representante(String rut_representante) {
+		this.rut_representante = rut_representante;
 	}
 	public String getEmail() {
 		return email;
