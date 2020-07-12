@@ -9,9 +9,9 @@ private String clave;
 
     public Conexion() {
         this.driver =  "org.postgresql.Driver" ;
-        this.url = "jdbc:postgresql://localhost:5432/delivery";
+        this.url = "jdbc:postgresql://localhost:5432/delivery2";
         this.usuario = "postgres";
-        this.clave = "benjamin1914";
+        this.clave = "root";
 
     }
 
