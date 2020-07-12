@@ -33,7 +33,7 @@ public class Crudproducto implements Operaciones {
            pst.setInt(3, producto.getStock());
            pst.setString(4, producto.getFoto());
            int row = pst.executeUpdate();
-       respuesta = "Registro grabado";    
+       respuesta = "Registro grabado exitosamente";    
        }catch(SQLException e){
        respuesta = e.getMessage();
        } catch (ClassNotFoundException ex) {

@@ -49,21 +49,20 @@ public class Crudlocal implements Operaciones {
      return respuesta;
     }
     @Override
-	public List<Producto> selectAll() {
-		List<Producto> datos = new ArrayList<>();
+	public List<Registro_local> selectAll() {
+		List<Registro_local> datos = new ArrayList<>();
 		Connection connection;
 		PreparedStatement pst;
 		// ResultSet --> Permite recorrer una lista.
 		ResultSet resultSet;
-		String query = "select * from producto";
+		String query = "select * from registro_local";
 		try {
 			Class.forName( conexion.getDriver() );
 	           connection = (Connection) DriverManager.getConnection(conexion.getUrl(), conexion.getUsuario(), conexion.getClave());
 	           pst = (PreparedStatement) connection.prepareStatement(query);
 	           resultSet= pst.executeQuery();
 	           while(resultSet.next()) {
-	        	   
-	               datos.add(new Producto(resultSet.getString("nombre"),resultSet.getInt("precio"),resultSet.getInt("stock"),resultSet.getString("foto")));
+	               datos.add(new Registro_local(resultSet.getString("nombre"),resultSet.getString("rut_representante"),resultSet.getString("email"),resultSet.getString("pwd"),resultSet.getInt("fono"),resultSet.getString("direccion"),resultSet.getString("comuna"),resultSet.getString("giro"),resultSet.getString("patente")));
 	           }
 	           
 	           
@@ -73,6 +72,7 @@ public class Crudlocal implements Operaciones {
 		}
 		return datos;
 	}    
+   
 
     
 }
