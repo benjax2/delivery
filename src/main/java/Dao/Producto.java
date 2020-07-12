@@ -17,6 +17,9 @@ public class Producto {
 		this.stock = stock;
 		this.foto = foto;
 	}
+	public Producto() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getNombre() {
 		return nombre;
 	}
