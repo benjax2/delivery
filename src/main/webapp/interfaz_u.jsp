@@ -55,7 +55,7 @@
 						<%	
                 			Crudlocal crudLocal = new Crudlocal();
                			 	List<Registro_local> datos = new ArrayList();          
-                		//	datos = crudLocal.selectAll();   
+                			datos = crudLocal.selectAll();   
                			 %>
 						
 						<%
