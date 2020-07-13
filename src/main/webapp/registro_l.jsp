@@ -48,7 +48,7 @@
         <div class="container">
             <div class="row h-100 align-items-center justify-content-center text-center">
                  <!-- formulario-->
-                <form class="formulario" method="POST" action="Proceso_local" onsubmit="validac()">
+                <form class="formulario" method="POST" action="Proceso_local" onsubmit="validal()">
                     <h3 style="margin-bottom: 20px;margin-top:-10%;">Registro Local Comercial</h3>
                     <div class="contenedor">
 
