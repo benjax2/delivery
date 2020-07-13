@@ -43,30 +43,27 @@ public class Crudproducto implements Operaciones {
         }
      return respuesta;
     }
-    public String eliminar(Object object) {
-        String respuesta="";
-        Producto producto = (Producto) object; 
+    public String delete(Object object) {
+        Producto persona = (Producto) object;
         Connection connection;
         PreparedStatement pst;
-        String query = "delete from producto where id_producto = ?";
-        
-        try{
-            //conexion y ejecucion sql.
-            Class.forName( conexion.getDriver() );
-            connection = (Connection) DriverManager.getConnection(conexion.getUrl(), conexion.getUsuario(), conexion.getClave());
-            pst = (PreparedStatement) connection.prepareStatement(query);
-
-            pst.setInt(1, producto.getId_producto());
-    
-            int row = pst.executeUpdate();
-        respuesta = "Registro grabado exitosamente";    
-        }catch(SQLException e){
-        respuesta = e.getMessage();
-        } catch (ClassNotFoundException ex) {
-             Logger.getLogger(Crudproducto.class.getName()).log(Level.SEVERE, null, ex);
+        String query = "delete from producto where nombre = ?";
+        String respuesta = "";
+         try {
+             Class.forName(conexion.getDriver());
+             connection = (Connection) DriverManager.getConnection(conexion.getUrl(), conexion.getUsuario(), conexion.getClave());
+             pst = connection.prepareStatement(query);
+             
+             pst.setString(1, persona.getNombre());                        
+             pst.executeUpdate();
+             
+       
+             
+         } catch (ClassNotFoundException | SQLException e) {
+             respuesta = e.getMessage();
          }
-      return respuesta;
-     }
+         return respuesta;
+     }  
     @Override
    	public List<Producto> selectAll() {
    		List<Producto> datos = new ArrayList<>();

@@ -50,7 +50,7 @@ public class Producto {
 	public int getId_producto() {
 		return id_producto;
 	}
-	public void setFoto(int id_producto) {
+	public void setId_producto(int id_producto) {
 		this.id_producto = id_producto;
 	}
 

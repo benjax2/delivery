@@ -65,7 +65,14 @@
  	 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     				Agregar producto
   				</button>
+  				<!-- modal2 boton eliminar-->
+  			<div class="d-flex col-lg-4 justify-content-end">	
+				<!-- Button to Open the Modal -->
+ 	 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+    				Eliminar
+  				</button>
   			</div>	
+  			</div>
   		</div>
   		<!-- The Modal -->
   	<div class="modal" id="myModal" style="margin-top:10%">
@@ -106,6 +113,37 @@
       </div>
     </div>
   </div>
+  
+  <!-- MODAL2 -->
+  	<div class="modal" id="myModal2" style="margin-top:10%">
+    	<div class="modal-dialog">
+      		<div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Eliminar producto</h4>
+          <button type="button" class="close btn btn-info" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form action="../EliminarProducto" method="post">
+  			<div class="form-group">
+    			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">
+  			</div>
+
+  			<button type="submit" class="btn btn-info">Eliminar</button>
+		</form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 		<br><hr>
 		<!-- Llamado Sql -->
 		<%	
@@ -130,9 +168,7 @@
   					<div class="card-body">
     					<h5 class="card-title"><%= local.getNombre() %></h5>
     					<p class="card-text"><strong>Precio: $ <%= local.getPrecio() %> </strong></p>
-    					<p class="card-text"><strong>Stock: <%= local.getStock() %></strong></p>
-   					    <button type="button" class="btn btn-danger"  >-</button>
-   					    <button type="button" class="btn btn-info">Editar</button>
+    					<p class="card-text"><strong>Stock: <%= local.getStock() %></strong></p>	
   					</div>
 				</div>
 
