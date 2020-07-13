@@ -31,7 +31,7 @@ public class Crudlocal implements Operaciones {
            connection = (Connection) DriverManager.getConnection(conexion.getUrl(), conexion.getUsuario(), conexion.getClave());
            pst = (PreparedStatement) connection.prepareStatement(query);
            pst.setString(1, local.getNombre());
-           pst.setString(2, local.getRut_representante());
+           pst.setString(2, local.getRut());
            pst.setString(3, local.getEmail());
            pst.setString(4, local.getPwd());
            pst.setInt(5, local.getFono());
@@ -62,7 +62,7 @@ public class Crudlocal implements Operaciones {
 	           pst = (PreparedStatement) connection.prepareStatement(query);
 	           resultSet= pst.executeQuery();
 	           while(resultSet.next()) {
-	               datos.add(new Registro_local(resultSet.getString("nombre"),resultSet.getString("rut_representante"),resultSet.getString("email"),resultSet.getString("pwd"),resultSet.getInt("fono"),resultSet.getString("direccion"),resultSet.getString("comuna"),resultSet.getString("giro"),resultSet.getString("patente")));
+	               datos.add(new Registro_local(resultSet.getString("nombre"),resultSet.getString("rut"),resultSet.getString("email"),resultSet.getString("pwd"),resultSet.getInt("fono"),resultSet.getString("direccion"),resultSet.getString("comuna"),resultSet.getString("giro"),resultSet.getString("patente")));
 	           }
 	           
 	           

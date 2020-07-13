@@ -49,14 +49,101 @@
 					
 				<li><a href="#"><span class="fa fa-envelope icon-menu"></span>Contacto</a></li>
 				<li><a href="#"><span class="fa fa-envelope icon-menu"></span>Editar perfil</a></li>
-				<li><a href="./index.html">Cerrar Sesion</a></li>
+				<li><a href="../index.html">Cerrar Sesion</a></li>
 			</ul>
 		</nav>
 	</header>
 	
 	<div class="container text-center mt-3 pt-3">
+		<div class="row">
+			<div class="d-flex col-lg-4"></div>
+			<div class="d-flex col-lg-4 justify-content-center">
+				<h1>Productos</h1>
+			</div>
+			<div class="d-flex col-lg-4 justify-content-end">	
+				<!-- Button to Open the Modal -->
+ 	 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    				Agregar producto
+  				</button>
+  				<!-- modal2 boton eliminar-->
+  			<div class="d-flex col-lg-4 justify-content-end">	
+				<!-- Button to Open the Modal -->
+ 	 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+    				Eliminar
+  				</button>
+  			</div>	
+  			</div>
+  		</div>
+  		<!-- The Modal -->
+  	<div class="modal" id="myModal" style="margin-top:10%">
+    	<div class="modal-dialog">
+      		<div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Agregar productos:</h4>
+          <button type="button" class="close btn btn-info" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form action="../ProcesoProducto" method="post">
+  			<div class="form-group">
+    			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de producto">
+  			</div>
+  			<div class="form-group">
+    			<input type="number" class="form-control" id="precio" name="precio" placeholder="Precio de producto">
+  			</div>
+  			<div class="form-group">
+    			<input type="number" class="form-control" id="stock" name="stock" placeholder="Stock">
+  			</div>
+  			
+  			 <div class="form-group">
+    			<input type="text" class="form-control" id="url" name="url" placeholder="Foto (url)">
+  			</div>
+  			<button type="submit" class="btn btn-info">Agregar</button>
+		</form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <!-- MODAL2 -->
+  	<div class="modal" id="myModal2" style="margin-top:10%">
+    	<div class="modal-dialog">
+      		<div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Eliminar producto</h4>
+          <button type="button" class="close btn btn-info" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form action="../EliminarProducto" method="post">
+  			<div class="form-group">
+    			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">
+  			</div>
 
-		<h1>Productos</h1>
+  			<button type="submit" class="btn btn-info">Eliminar</button>
+		</form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 		<br><hr>
 		<!-- Llamado Sql -->
 		<%	
@@ -81,9 +168,7 @@
   					<div class="card-body">
     					<h5 class="card-title"><%= local.getNombre() %></h5>
     					<p class="card-text"><strong>Precio: $ <%= local.getPrecio() %> </strong></p>
-    					<p class="card-text"><strong>Stock: <%= local.getStock() %></strong></p>
-   					    <button type="button" class="btn btn-danger">-</button>
-   					    <button type="button" class="btn btn-info">Editar</button>
+    					<p class="card-text"><strong>Stock: <%= local.getStock() %></strong></p>	
   					</div>
 				</div>
 
