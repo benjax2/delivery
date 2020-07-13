@@ -9,16 +9,19 @@ public class Producto {
 	private int precio;
 	private int stock;
 	private String foto;
+	private int id_producto;
 	
-	public Producto(String nombre, int precio, int stock,String foto) {
+	public Producto(int id_producto,String nombre, int precio, int stock,String foto) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
 		this.stock = stock;
 		this.foto = foto;
+		this.id_producto = id_producto;
 	}
+
 	public Producto() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	public String getNombre() {
 		return nombre;
@@ -44,5 +47,12 @@ public class Producto {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+	public int getId_producto() {
+		return id_producto;
+	}
+	public void setFoto(int id_producto) {
+		this.id_producto = id_producto;
+	}
+
 	
 }

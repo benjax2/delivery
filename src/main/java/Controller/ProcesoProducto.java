@@ -14,13 +14,13 @@ import Model.Crudproducto;
 /**
  * Servlet implementation class Proceso
  */
-public class Proceso_producto extends HttpServlet {
+public class ProcesoProducto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Proceso_producto() {
+    public ProcesoProducto() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,7 +46,8 @@ public class Proceso_producto extends HttpServlet {
          producto.setNombre(request.getParameter("nombre"));
          producto.setPrecio(Integer.parseInt(request.getParameter("precio")));
          producto.setStock(Integer.parseInt(request.getParameter("stock")));
-         producto.setFoto(request.getParameter("foto"));
+         //producto.setStock(Integer.parseInt(request.getParameter("id")));
+         producto.setFoto(request.getParameter("url"));
 
 
         
@@ -55,15 +56,7 @@ public class Proceso_producto extends HttpServlet {
          response.setContentType("text/html;charset=UTF-8");
          try (PrintWriter out = response.getWriter()) {
              /* TODO output your page here. You may use following sample code. */
-             out.println("<!DOCTYPE html>");
-             out.println("<html>");
-             out.println("<head>");
-             out.println("<title>Servlet Proceso</title>");            
-             out.println("</head>");
-             out.println("<body>");
-             out.println("<h1>Servlet Proceso at " + respuesta + "</h1>");
-             out.println("</body>");
-             out.println("</html>");
+        	 response.sendRedirect(request.getContextPath() + "/menu_local/productos.jsp");
          }
      }
 	}
