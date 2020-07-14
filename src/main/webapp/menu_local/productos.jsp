@@ -174,21 +174,27 @@
 				<div class="card" style="width: 18rem;">
 				<form class="formulario" method="POST" action="../EliminarProducto">
 						<h5 class="card-title" style="margin-top: 10px;" ><%= local.getNombre() %></h5>
-						<input type="text" name="id_prod" id="id" value="<%= local.getId_producto() %>" readonly hidden="true"><br>
+						<input type="text" name="id_prod" id="id_prod" value="<%= local.getId_producto() %>" readonly hidden="true"><br>
   					<img class="card-img-top"  src="<%= local.getFoto() %>">
   					<% System.out.println(local.getFoto()); %>
   					<div class="card-body">
     					<h6 class="card-text"><strong>Valor: $ <%= local.getPrecio() %> &nbsp; &nbsp; &nbsp; &nbsp; Stock: <%= local.getStock() %> </strong></h6>
     					
     					<input type="submit" value="Eliminar" class="button" name="eliminar">
-    					<!-- input type="submit" value="Editar" class="button" name="editar"--> 
-    					<!-- p class="card-text"><strong>Stock: </strong></p -->
+ 						<a href="Editar_producto.jsp?id=<%=local.getId_producto()%>"> Editar</a>
+    	    
+ 
+    					
   					</div>
   				</form>
 				</div>
 			
 			</div>
 			<% } %>
+
+		
+			
+			
 			
 		</section>	
 		

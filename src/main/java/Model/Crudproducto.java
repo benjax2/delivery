@@ -88,7 +88,53 @@ public class Crudproducto implements Operaciones {
    			// TODO: handle exception
    		}
    		return datos;
-   	}    
+   	} 
+    
+   	public List<Producto> buscarId(int id) {
+   		List<Producto> datos = new ArrayList<>();
+   		Connection connection;
+   		PreparedStatement pst;
+   		// ResultSet --> Permite recorrer una lista.
+   		ResultSet resultSet;
+   		String query = "select * from producto where id_producto="+id;
+   		try {
+   			Class.forName( conexion.getDriver() );
+   	           connection = (Connection) DriverManager.getConnection(conexion.getUrl(), conexion.getUsuario(), conexion.getClave());
+   	           pst = (PreparedStatement) connection.prepareStatement(query);
+   	           resultSet= pst.executeQuery();
+   	           while(resultSet.next()) {
+   	        	   
+   	               datos.add(new Producto(resultSet.getInt("id_producto"),resultSet.getString("nombre"),resultSet.getInt("precio"),resultSet.getInt("stock"),resultSet.getString("foto")));
+   	           }
+   	           
+   	           
+   	           
+   		} catch (ClassNotFoundException | SQLException e) {
+   			// TODO: handle exception
+   		}
+   		return datos;
+   	}     
+    
+   	public String update(Producto p) {
 
+   		String respuesta="";
+   		Connection connection;
+   		PreparedStatement pst;
+   		// ResultSet --> Permite recorrer una lista.
+   		ResultSet resultSet;
+   		String query = "update producto set nombre='"+p.getNombre()+"', precio='"+p.getPrecio()+"', stock='"+p.getStock()+"', foto='"+p.getFoto()+"' where id_producto="+p.getId_producto();
+   		try {
+   			Class.forName( conexion.getDriver() );
+   	           connection = (Connection) DriverManager.getConnection(conexion.getUrl(), conexion.getUsuario(), conexion.getClave());
+   	           pst = (PreparedStatement) connection.prepareStatement(query);
+   	           resultSet= pst.executeQuery();
+
+   	        respuesta = "Registro grabado exitosamente"+ resultSet.getInt("id_producto")+resultSet.getString("nombre")+resultSet.getInt("precio")+resultSet.getInt("stock")+resultSet.getString("foto");
+   		} catch (ClassNotFoundException | SQLException e) {
+   			// TODO: handle exception
+   			respuesta = e.getMessage();
+   		}
+   		return respuesta;
+   	} 
     
 }

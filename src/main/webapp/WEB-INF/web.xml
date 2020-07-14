@@ -43,6 +43,13 @@
     	<servlet-name>EliminarProducto</servlet-name>
     	<servlet-class>Controller.EliminarProducto</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>EditarProducto</display-name>
+    	<servlet-name>EditarProducto</servlet-name>
+    	<servlet-class>Controller.EditarProducto</servlet-class>
+    </servlet>    
     <servlet-mapping>
     	<servlet-name>Proceso</servlet-name>
     	<url-pattern>/Proceso</url-pattern>
@@ -66,6 +73,10 @@
     <servlet-mapping>
     	<servlet-name>EliminarProducto</servlet-name>
     	<url-pattern>/EliminarProducto</url-pattern>
+    </servlet-mapping>
+        <servlet-mapping>
+    	<servlet-name>EditarProducto</servlet-name>
+    	<url-pattern>/EditarProducto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
