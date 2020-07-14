@@ -44,17 +44,17 @@ public class Crudproducto implements Operaciones {
      return respuesta;
     }
     public String delete(Object object) {
-        Producto persona = (Producto) object;
+        Producto producto = (Producto) object;
         Connection connection;
         PreparedStatement pst;
-        String query = "delete from producto where nombre = ?";
+        String query = "delete from producto where id_producto = ?";
         String respuesta = "";
          try {
              Class.forName(conexion.getDriver());
              connection = (Connection) DriverManager.getConnection(conexion.getUrl(), conexion.getUsuario(), conexion.getClave());
              pst = connection.prepareStatement(query);
              
-             pst.setString(1, persona.getNombre());                        
+             pst.setInt(1, producto.getId_producto());                        
              pst.executeUpdate();
              
        

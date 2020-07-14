@@ -41,11 +41,20 @@ public class EliminarProducto extends HttpServlet {
 		doGet(request, response);
 		//codigo para eliminar registro...
 		try {
+		
 	        Crudproducto crudProducto = new Crudproducto();
 	        Producto producto = new Producto();
-	        producto.setNombre(request.getParameter("nombre"));
-	        String resp = crudProducto.delete(producto);
-	        response.sendRedirect(request.getContextPath() + "/menu_local/productos.jsp");
+	        
+	      //  if(request.getParameter("nombre") == "editar"){
+	       // }else if(request.getParameter("nombre") == "eliminar"){
+	        	
+	        	int id = Integer.parseInt(request.getParameter("id_prod"));
+		        producto.setId_producto(id);
+		        String resp = crudProducto.delete(producto);
+		        response.sendRedirect(request.getContextPath() + "/menu_local/productos.jsp");
+	        
+	        
+
 		} catch (Exception e) {
 			
 		}

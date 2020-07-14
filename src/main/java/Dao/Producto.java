@@ -19,6 +19,10 @@ public class Producto {
 		this.foto = foto;
 		this.id_producto = id_producto;
 	}
+	public Producto(int id_producto) {
+		super();
+		this.id_producto = id_producto;
+	}
 
 	public Producto() {
 		

@@ -24,7 +24,16 @@
     	object-fit: cover;
 		}
 	</style>
-	
+	<!-- script>
+		function recibir() {	
+			var id = document.getElementById("id").value;
+			var p = document.getElementById("p");
+			localStorage.setItem("id", id);
+			p.value = localStorage.getItem("id");
+			console.log(p.value);
+			localStorage.clear("id");
+			} 
+	</script -->
 </head>
 
 <body>
@@ -163,19 +172,24 @@
 			<div class="col-12 col-md-4 col-lg-4 mt-2">
 
 				<div class="card" style="width: 18rem;">
-  					<img class="card-img-top"  src="<%= local.getFoto() %>" alt="Card image cap">
+				<form class="formulario" method="POST" action="../EliminarProducto">
+						<h5 class="card-title" style="margin-top: 10px;" ><%= local.getNombre() %></h5>
+						<input type="text" name="id_prod" id="id" value="<%= local.getId_producto() %>" readonly hidden="true"><br>
+  					<img class="card-img-top"  src="<%= local.getFoto() %>">
   					<% System.out.println(local.getFoto()); %>
   					<div class="card-body">
-    					<h5 class="card-title"><%= local.getNombre() %></h5>
-    					<p class="card-text"><strong>Precio: $ <%= local.getPrecio() %> </strong></p>
-    					<p class="card-text"><strong>Stock: <%= local.getStock() %></strong></p>	
+    					<h6 class="card-text"><strong>Valor: $ <%= local.getPrecio() %> &nbsp; &nbsp; &nbsp; &nbsp; Stock: <%= local.getStock() %> </strong></h6>
+    					
+    					<input type="submit" value="Eliminar" class="button" name="eliminar">
+    					<!-- input type="submit" value="Editar" class="button" name="editar"--> 
+    					<!-- p class="card-text"><strong>Stock: </strong></p -->
   					</div>
+  				</form>
 				</div>
-
+			
 			</div>
-									<%
-        	}
-        %>
+			<% } %>
+			
 		</section>	
 		
 	</div>
