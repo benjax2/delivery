@@ -22,6 +22,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/formulario.css" rel="stylesheet" />
+	
+    
 </head>
 
 <body id="page-top">
@@ -80,7 +82,7 @@
                             <i class="fas fa-user icon"></i>
                             <input type="text" placeholder="direccion" id="direccion" name="direccion">
                         </div>
-                        <input type="submit" value="Registrate" class="button">
+                        <input type="submit" value="Registrate" class="button" onclick="registro()">
                     </div>
                    
                 </form>
@@ -101,5 +103,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/validaciones.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
 </body>
 </html>

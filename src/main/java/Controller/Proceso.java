@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Dao.Registro_cliente;
 import Dao.Registro_local;
@@ -42,6 +43,9 @@ public class Proceso extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		doGet(request, response);
+		HttpSession session = request.getSession();
+		
+		
 		Registro_cliente cliente = new Registro_cliente();
         CrudPersona crudcliente = new CrudPersona();
         
@@ -57,16 +61,8 @@ public class Proceso extends HttpServlet {
          
          response.setContentType("text/html;charset=UTF-8");
          try (PrintWriter out = response.getWriter()) {
-             /* TODO output your page here. You may use following sample code. */
-             out.println("<!DOCTYPE html>");
-             out.println("<html>");
-             out.println("<head>");
-             out.println("<title>Servlet Proceso</title>");            
-             out.println("</head>");
-             out.println("<body>");
-             out.println("<h1>Servlet Proceso at " + respuesta + "</h1>");
-             out.println("</body>");
-             out.println("</html>");
+
+        	 response.sendRedirect(request.getContextPath() + "/index.html");
          }
      }
 	}

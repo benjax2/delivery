@@ -93,7 +93,7 @@
                             <i class="fas fa-phone-square-alt icon"></i>
                             <input type="text" placeholder="Patente" id="patente" name="patente">
                         </div>
-                        <input type="submit" value="Registrate" class="button">
+                        <input type="submit" value="Registrate" class="button" class="enviar">
                     </div>
                 </form>
             </div>
@@ -107,6 +107,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/validaciones.js"></script>
 </body>
 </html>

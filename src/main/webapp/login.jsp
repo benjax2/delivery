@@ -22,6 +22,21 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
+    <style>
+    	.boton{
+    	background-color: #008CBA;
+  		border: none;
+  		color: white;
+  		padding: 10px 20px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+ 	 	font-size: 12px;
+  		margin: 4px 2px;
+  		cursor: pointer;
+  		border-radius: 5px;
+  		}
+    </style>
 </head>
 
 <body id="page-top">
@@ -66,7 +81,7 @@
                             <label for="psw"><b>Contraseña</b></label>
                             <input type="password" placeholder="Contraseña" name="pwd" required>
 
-                            <input type="submit" name="accion" value="Ingresar">
+                            <input type="submit" name="accion" value="Ingresar" class="boton boton2">
                             <label>
                                 <input type="checkbox" checked="checked" name="remember">  recordar
                             </label>

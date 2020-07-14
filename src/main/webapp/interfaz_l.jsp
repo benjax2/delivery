@@ -16,6 +16,7 @@
 	<title>Interfaz de local</title>
 	<link rel="stylesheet" href="css/interfaz_usuari.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
+	 <link rel="shortcut icon" href="./assets/img/favicon.jpg">
 
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/main.js"></script>

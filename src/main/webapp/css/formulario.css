@@ -49,6 +49,9 @@ input[type="password"]{
 .button:hover{
     background: orange;
 }
+enviar:hover{
+	background: orange;
+}
 p{
     text-align: center;
 }
