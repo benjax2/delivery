@@ -47,7 +47,7 @@
 				</li>
 
 				<li class="item" menu="2">
-					<a href="menu_local/productos.jsp"><span class="fa fa-shopping-bag icon-menu"></span>Productos</a></li>
+					<a href="./menu_local/productos.jsp"><span class="fa fa-shopping-bag icon-menu"></span>Productos</a></li>
 					
 					
 				<li><a href="#"><span class="fa fa-envelope icon-menu"></span>Contacto</a></li>

@@ -14,7 +14,7 @@
 	<title>Interfaz de local</title>
 	<link rel="stylesheet" href="../css/interfaz_usuari.css">
 	<link rel="stylesheet" href="../css/font-awesome.css">
-
+	<link rel="shortcut icon" href="../assets/img/favicon.jpg">
 	<script src="../js/jquery-3.2.1.js"></script>
 	<script src="../js/main.js"></script>
 	<style>
@@ -53,7 +53,7 @@
 				</li>
 
 				<li class="item" menu="2">
-					<a href="productos.jsp"><span class="fa fa-shopping-bag icon-menu"></span>Productos</a></li>
+					<a href="./productos.jsp"><span class="fa fa-shopping-bag icon-menu"></span>Productos</a></li>
 					
 					
 				<li><a href="#"><span class="fa fa-envelope icon-menu"></span>Contacto</a></li>
@@ -74,13 +74,7 @@
  	 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     				Agregar producto
   				</button>
-  				<!-- modal2 boton eliminar-->
-  			<div class="d-flex col-lg-4 justify-content-end">	
-				<!-- Button to Open the Modal -->
- 	 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
-    				Eliminar
-  				</button>
-  			</div>	
+  				<!-- modal2 boton eliminar-->	
   			</div>
   		</div>
   		<!-- The Modal -->
@@ -123,36 +117,6 @@
     </div>
   </div>
   
-  <!-- MODAL2 -->
-  	<div class="modal" id="myModal2" style="margin-top:10%">
-    	<div class="modal-dialog">
-      		<div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Eliminar producto</h4>
-          <button type="button" class="close btn btn-info" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          <form action="../EliminarProducto" method="post">
-  			<div class="form-group">
-    			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">
-  			</div>
-
-  			<button type="submit" class="btn btn-info">Eliminar</button>
-		</form>
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
 		<br><hr>
 		<!-- Llamado Sql -->
 		<%	
@@ -180,8 +144,8 @@
   					<div class="card-body">
     					<h6 class="card-text"><strong>Valor: $ <%= local.getPrecio() %> &nbsp; &nbsp; &nbsp; &nbsp; Stock: <%= local.getStock() %> </strong></h6>
     					
-    					<input type="submit" value="Eliminar" class="button" name="eliminar">
- 						<a href="Editar_producto.jsp?id=<%=local.getId_producto()%>"> Editar</a>
+    					<input type="submit" value=" - " class="btn btn-danger"  name="eliminar" style="padding-top:3px;">
+ 						<button class="btn btn-info"><a href="Editar_producto.jsp?id=<%=local.getId_producto()%>" style="color:white;"> Editar</a></button>
     	    
  
     					

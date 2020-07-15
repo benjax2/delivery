@@ -14,7 +14,7 @@
 	<title>Interfaz de local</title>
 	<link rel="stylesheet" href="../css/interfaz_usuari.css">
 	<link rel="stylesheet" href="../css/font-awesome.css">
-
+	<link rel="shortcut icon" href="../assets/img/favicon.jpg">
 	<script src="../js/jquery-3.2.1.js"></script>
 	<script src="../js/main.js"></script>
 	<style>
@@ -30,7 +30,7 @@
 <body>
 	<header>
 		<span id="button-menu" class="fa fa-bars" hidden="true"></span>
-		<a class="navbar-brand js-scroll-trigger" href="productos.jsp">Volver <i class="fas fa-hamburger"></i></a>
+		<a class="navbar-brand js-scroll-trigger" href="productos.jsp" style="color:white">Volver <i class="fas fa-hamburger"></i></a>
 
 		<nav class="navegacion" id="nav">
 			<ul class="menu">
@@ -74,17 +74,17 @@
         	%>
 			<div class="col-12 col-md-4 col-lg-4 mt-2">
 
-				<div class="card" style="width: 18rem;">
+				<div class="card" style="width: 18rem;margin-left:120%">
 				<form class="formulario" method="POST" action="../EditarProducto">
 					<div class="card-body">
-						<h4 class="card-title" style="margin-top: 10px;" >Editar Producto</h4>
+						<h4 class="card-title text-center" style="margin-top: 10px;" >Editar Producto</h4>
 						<input type="text" name="id" id="id" value="<%= local.getId_producto() %>" hidden="true"><br>
 						<h6>Nombre</h6><input type="text" name="nombre" id="nombre" value="<%= local.getNombre() %>"><br>
 						<h6>Valor</h6><input type="text" name="precio" id="precio" value="<%= local.getPrecio() %>"><br>
 						<h6>Stock</h6><input type="text" name="stock" id="stock" value="<%= local.getStock() %>"><br>
 						<h6>Foto</h6><input type="text" name="foto" id="foto" value="<%= local.getFoto() %>"><br>
 						<br>
-    					<input type="submit" value="Editar" class="button" name="Editar"><br>
+    					<input type="submit" value="Editar" class="button btn btn-info" name="Editar"><br>
   					</div>
   				</form>
 				</div>

@@ -11,7 +11,7 @@ private String clave;
         this.driver =  "org.postgresql.Driver" ;
         this.url = "jdbc:postgresql://localhost:5432/delivery";
         this.usuario = "postgres";
-        this.clave = "root";
+        this.clave = "benjamin1914";
 
     }
 
